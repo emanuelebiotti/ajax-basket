@@ -3,6 +3,8 @@
 // Chiedere all’API i giocatori e stampare a schermo una card per ogni giocatore attraverso handlebars.
 // Inizialmente chiamate l'API con un numero fisso stabilito da voi, in modo da interrogare l'API nel modo corretto e stilare le card.
 // Poi aggiungete la richiesta del numero dei giocatori all'utente
+$(document).ready(function(){
+
 
 $.ajax({
 
@@ -13,7 +15,7 @@ $.ajax({
   },
   'success': function(data){
     var giocatori = data.response;
-    // console.log(giocatori);
+    console.log(giocatori);
 
     // var player = {
     //   'playerCode': '' ,
@@ -22,6 +24,8 @@ $.ajax({
     //   'points': '',
     //   'twoPoints': ''
     // }
+
+    // var players = [];
 
     for (var i = 0; i<giocatori.length; i++){
 
@@ -33,13 +37,21 @@ $.ajax({
         'twoPoints': giocatori[i].twoPoints
       };
 
-      // $('.schermatagiocatore .codice span').text(giocatori[i].playerCode);
-      console.log(player);
+      // console.log(player);
+
+
     }
+
 
   },
   'error': function(){
     alert('errore');
   }
+
+});
+
+
+
+
 
 });
