@@ -12,8 +12,30 @@ $.ajax({
     'n': 3
   },
   'success': function(data){
-    var giocatore = data.response;
-    console.log(giocatore);
+    var giocatori = data.response;
+    // console.log(giocatori);
+
+    // var player = {
+    //   'playerCode': '' ,
+    //   'rebounds': '',
+    //   'fouls': '',
+    //   'points': '',
+    //   'twoPoints': ''
+    // }
+
+    for (var i = 0; i<giocatori.length; i++){
+
+      var player = {
+        'playerCode': giocatori[i].playerCode ,
+        'rebounds': giocatori[i].rebounds,
+        'fouls': giocatori[i].fouls,
+        'points': giocatori[i].points,
+        'twoPoints': giocatori[i].twoPoints
+      };
+
+      // $('.schermatagiocatore .codice span').text(giocatori[i].playerCode);
+      console.log(player);
+    }
 
   },
   'error': function(){
