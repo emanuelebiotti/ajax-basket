@@ -20,47 +20,37 @@ $(document).ready(function(){
 
   // console.log(html);
 
-$.ajax({
+  $.ajax({
 
-  'url': 'https://www.boolean.careers/api/array/basket',
-  'method': 'GET',
-  'data': {
-    'n': 3
-  },
-  'success': function(data){
-    console.log(data.response);
+    'url': 'https://www.boolean.careers/api/array/basket',
+    'method': 'GET',
+    'data': {
+      'n': 3
+    },
+    'success': function(data){
+      console.log(data.response);
 
-    for (var i = 0; i < data.response.length; i++) {
+      for (var i = 0; i < data.response.length; i++) {
 
-      var context = {
-        playerCode: data.response[i].playerCode,
-        rebounds: data.response[i].rebounds,
-        fouls: data.response[i].fouls,
-        points: data.response[i].points,
-        twoPoints: data.response[i].twoPoints,
-      };
+        var context = {
+          playerCode: data.response[i].playerCode,
+          rebounds: data.response[i].rebounds,
+          fouls: data.response[i].fouls,
+          points: data.response[i].points,
+          twoPoints: data.response[i].twoPoints,
+        };
 
-      var html = template(context);
+        var html = template(context);
+        $('.container').append(html);
 
+      }
 
-      $('.container').append(html);
-
-
+    },
+    'error': function(){
+      alert('errore');
     }
 
-
-
-
-
-
-  },
-  'error': function(){
-    alert('errore');
-  }
-
-});
-
-
+  });
 
 
 
