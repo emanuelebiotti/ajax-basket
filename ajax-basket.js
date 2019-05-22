@@ -8,19 +8,17 @@ $(document).ready(function(){
   var source   = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
-  // console.log(template);
+  // var context = {
+  //   playerCode: "",
+  //   rebounds: "",
+  //   fouls: "",
+  //   points: "",
+  //   twopoints: ""
+  // };
 
-  var context = {
-    playerCode: "",
-    rebounds: "",
-    fouls: "",
-    points: "",
-    twopoints: ""
-  };
+  // var html = template(context);
 
-  var html = template(context);
-
-  console.log(html);
+  // console.log(html);
 
 $.ajax({
 
@@ -33,6 +31,17 @@ $.ajax({
     console.log(data.response);
 
     for (var i = 0; i < data.response.length; i++) {
+
+      var context = {
+        playerCode: data.response[i].playerCode,
+        rebounds: data.response[i].rebounds,
+        fouls: data.response[i].fouls,
+        points: data.response[i].points,
+        twoPoints: data.response[i].twoPoints,
+      };
+
+      var html = template(context);
+
 
       $('.container').append(html);
 
