@@ -5,35 +5,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="ajax-basket.css">
     <script src="ajax-basket.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js">
+
+    </script>
     <title></title>
   </head>
   <body>
 
-<div class="container">
-  <div class="schermatagiocatore">
-    <p class="codice">Player code: <span></span></p>
-    <p class ="rebounds">Rebounds: <span></span></p>
-    <p class="fouls">Fouls: <span></span> </p>
-    <p class="points">Points: <span></span></p>
-    <p class="twopoints">Two Points: <span></span></p>
-  </div>
+    <div class="container">
+      <!-- <div class="schermatagiocatore">
+        <p class="codice">Player code: <span></span></p>
+        <p class ="rebounds">Rebounds: <span></span></p>
+        <p class="fouls">Fouls: <span></span> </p>
+        <p class="points">Points: <span></span></p>
+        <p class="twopoints">Two Points: <span></span></p>
+      </div>
 
-  <div class="schermatagiocatore">
-    <p class="codice">Player code: <span></span></p>
-    <p class ="rebounds">Rebounds: <span></span></p>
-    <p class="fouls">Fouls: <span></span> </p>
-    <p class="points">Points: <span></span></p>
-    <p class="twopoints">Two Points: <span></span></p>
-  </div>
+      <div class="schermatagiocatore">
+        <p class="codice">Player code: <span></span></p>
+        <p class ="rebounds">Rebounds: <span></span></p>
+        <p class="fouls">Fouls: <span></span> </p>
+        <p class="points">Points: <span></span></p>
+        <p class="twopoints">Two Points: <span></span></p>
+      </div>
 
-  <div class="schermatagiocatore">
-    <p class="codice">Player code: <span></span></p>
-    <p class ="rebounds">Rebounds: <span></span></p>
-    <p class="fouls">Fouls: <span></span> </p>
-    <p class="points">Points: <span></span></p>
-    <p class="twopoints">Two Points: <span></span></p>
-  </div>
-</div>
+      <div class="schermatagiocatore">
+        <p class="codice">Player code: <span></span></p>
+        <p class ="rebounds">Rebounds: <span></span></p>
+        <p class="fouls">Fouls: <span></span> </p>
+        <p class="points">Points: <span></span></p>
+        <p class="twopoints">Two Points: <span></span></p>
+      </div> -->
+    </div>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="schermatagiocatore">
+        <p class="codice">Player code: <span>{{playerCode}}</span></p>
+        <p class ="rebounds">Rebounds: <span></span></p>
+        <p class="fouls">Fouls: <span></span> </p>
+        <p class="points">Points: <span></span></p>
+        <p class="twopoints">Two Points: <span></span></p>
+      </div>
+  </script>
 
 
   </body>

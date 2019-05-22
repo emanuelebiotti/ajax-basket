@@ -5,6 +5,22 @@
 // Poi aggiungete la richiesta del numero dei giocatori all'utente
 $(document).ready(function(){
 
+  var source   = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+
+  // console.log(template);
+
+  var context = {
+    playerCode: "",
+    rebounds: "",
+    fouls: "",
+    points: "",
+    twopoints: ""
+  };
+
+  var html = template(context);
+
+  console.log(html);
 
 $.ajax({
 
@@ -14,33 +30,18 @@ $.ajax({
     'n': 3
   },
   'success': function(data){
-    var giocatori = data.response;
-    console.log(giocatori);
+    console.log(data.response);
 
-    // var player = {
-    //   'playerCode': '' ,
-    //   'rebounds': '',
-    //   'fouls': '',
-    //   'points': '',
-    //   'twoPoints': ''
-    // }
+    for (var i = 0; i < data.response.length; i++) {
 
-    // var players = [];
-
-    for (var i = 0; i<giocatori.length; i++){
-
-      var player = {
-        'playerCode': giocatori[i].playerCode ,
-        'rebounds': giocatori[i].rebounds,
-        'fouls': giocatori[i].fouls,
-        'points': giocatori[i].points,
-        'twoPoints': giocatori[i].twoPoints
-      };
-
-      // console.log(player);
+      $('.container').append(html);
 
 
     }
+
+
+
+
 
 
   },
