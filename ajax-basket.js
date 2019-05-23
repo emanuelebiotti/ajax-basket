@@ -35,7 +35,6 @@ $(document).ready(function(){
         if(event.which == 13) {
         var numerogiocatori = $('input').val();
 
-
           for (var i = 0; i < numerogiocatori; i++) {
 
             var context = {
