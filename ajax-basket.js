@@ -30,20 +30,31 @@ $(document).ready(function(){
     'success': function(data){
       console.log(data.response);
 
-      for (var i = 0; i < data.response.length; i++) {
+      $('input').keypress(function(event){
+      // se il tasto premuto è "invio"
+        if(event.which == 13) {
+        var numerogiocatori = $('input').val();
 
-        var context = {
-          playerCode: data.response[i].playerCode,
-          rebounds: data.response[i].rebounds,
-          fouls: data.response[i].fouls,
-          points: data.response[i].points,
-          twoPoints: data.response[i].twoPoints,
-        };
 
-        var html = template(context);
-        $('.container').append(html);
+        for (var i = 0; i < numerogiocatori; i++) {
 
+          var context = {
+            playerCode: data.response[i].playerCode,
+            rebounds: data.response[i].rebounds,
+            fouls: data.response[i].fouls,
+            points: data.response[i].points,
+            twoPoints: data.response[i].twoPoints,
+          };
+
+
+
+
+          var html = template(context);
+          $('.container').append(html);
+
+        }
       }
+    });
 
     },
     'error': function(){
