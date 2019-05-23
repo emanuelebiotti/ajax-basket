@@ -36,24 +36,22 @@ $(document).ready(function(){
         var numerogiocatori = $('input').val();
 
 
-        for (var i = 0; i < numerogiocatori; i++) {
+          for (var i = 0; i < numerogiocatori; i++) {
 
-          var context = {
-            playerCode: data.response[i].playerCode,
-            rebounds: data.response[i].rebounds,
-            fouls: data.response[i].fouls,
-            points: data.response[i].points,
-            twoPoints: data.response[i].twoPoints,
-          };
-
-
+            var context = {
+              playerCode: data.response[i].playerCode,
+              rebounds: data.response[i].rebounds,
+              fouls: data.response[i].fouls,
+              points: data.response[i].points,
+              twoPoints: data.response[i].twoPoints,
+            };
 
 
-          var html = template(context);
-          $('.container').append(html);
+            var html = template(context);
+            $('.container').append(html);
 
+          }
         }
-      }
     });
 
     },
