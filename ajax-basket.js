@@ -8,18 +8,6 @@ $(document).ready(function(){
   var source   = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
-  // var context = {
-  //   playerCode: "",
-  //   rebounds: "",
-  //   fouls: "",
-  //   points: "",
-  //   twopoints: ""
-  // };
-
-  // var html = template(context);
-
-  // console.log(html);
-
   $.ajax({
 
     'url': 'https://www.boolean.careers/api/array/basket',
