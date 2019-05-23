@@ -25,7 +25,7 @@ $(document).ready(function(){
     'url': 'https://www.boolean.careers/api/array/basket',
     'method': 'GET',
     'data': {
-      'n': 3
+      'n': 24
     },
     'success': function(data){
       console.log(data.response);
