@@ -1,35 +1,38 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background-color: #08BAB5;
-}
-.container {
-  width:1260px;
-  height:650px;
-  display:flex;
-  background-color:orange;
-  border-radius: 10px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-}
-.schermatagiocatore {
-  width:200px;
-  height:300px;
-  border:1px solid black;
-  border-color: white;
-  color:white;
-  text-align: center;
-}
-.visualizzatore {
-  margin-top: 15px;
-  width:100vw;
-  height:100px;
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color:white;
+  background-color: lightgrey;
+}
+input {
+  width:35px;
+  height:30px;
+}
+.richiesta {
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.card_container {
+  width:800px;
+  height:490px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:auto;
+  overflow: auto;
+}
+.card {
+  width:200px;
+  height:240px;
+  border:1px solid lightgrey;
+  background-color: white;
 }

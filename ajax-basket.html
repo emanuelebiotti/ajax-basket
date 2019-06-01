@@ -2,36 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="ajax-basket.js" type="text/javascript"></script>
     <link rel="stylesheet" href="ajax-basket.css">
-    <script src="ajax-basket.js"></script>
-    <!-- handlebars -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js">
-
-    </script>
     <title></title>
   </head>
+
   <body>
-
-    <div class="container">
-
+    <div class="richiesta">
+      <p>Quanti giocatori vuoi visualizzare?</p>
+      <input class="numero_card" type="text" name="" value="">
     </div>
 
-    <script id="entry-template" type="text/x-handlebars-template">
-      <div class="schermatagiocatore">
-        <p class="codice">Player code: <span>{{playerCode}}</span></p>
-        <p class ="rebounds">Rebounds: <span>{{rebounds}}</span></p>
-        <p class="fouls">Fouls: <span>{{fouls}}</span> </p>
-        <p class="points">Points: <span>{{points}}</span></p>
-        <p class="twopoints">Two Points: <span>{{twoPoints}}</span></p>
-      </div>
-    </script>
+  <div class="card_container">
 
-  <div class="visualizzatore">
-    <p>Quanti giocatori vuoi visualizzare?</p><input type="text" name="" value="">
   </div>
 
-  </body>
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="card">
+      <p><strong>Giocatore:</strong> <span>{{playerCode}}</span></p>
+      <p><strong>Falli:</strong> <span>{{fouls}}</span></p>
+      <p><strong>Punti:</strong> <span>{{points}}</span></p>
+      <p><strong>Rimbalzi:</strong> <span>{{rebounds}}</span></p>
+      <p><strong>Tiri da 2 punti:</strong> <span>{{threePoints}}</span></p>
+      <p><strong>Tiri da 3 punti:</strong> <span>{{twoPoints}}</span></p>
+    </div>
+  </script>
 
+  </body>
 </html>
